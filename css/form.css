@@ -1,0 +1,63 @@
+
+.form_content{
+   max-width: 500px;
+}
+
+.form_titel{
+    /*text-shadow: 2px 1px 3px #000;*/
+    text-shadow: 1px #000;
+    text-align: center;
+}
+
+.form{
+    margin: 10px;
+    
+}
+
+
+input[type=text], input[type=email], textarea{
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+    -webkit-box-sizing:border-box;
+    box-sizing: border-box;
+    
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius: 5px;
+}
+
+input,textarea{
+    border: 1px solid #aebd93;
+}
+
+input[type=text]:focus, input[type=email]:focus, textarea:focus{
+    outline:none;
+    border: 1px solid #aebd93;
+    box-shadow: 2px 1px 3px #aebd93,
+        -2px -1px 3px #aebd93;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius: 5px;
+    
+}
+
+textarea{
+    height: 100px;
+}
+
+
+input[type=submit]{
+    background-color: #990000;
+    color: white;
+    padding: 4px 8px;
+    border: 1px solid #999900;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+
+input[type=submit]:hover{
+    text-decoration: underline;
+}

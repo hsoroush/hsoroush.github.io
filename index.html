@@ -1,12 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Hadi's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/dragdrop.css">
+    <link rel="shortcut icon" type="image/x-icon" href="image/favicon/favicon.ico">
 </head>
-<body>
-   
-   <p>hello hadi</p>
-    
+
+<body onload="changeImage()">
+    <!-- -------------------------Header Part  ------------------>
+    <header>
+        <a class="navicon" href="javascript:;" onclick="navFunction()">&#9776;</a>
+        <div id="stickyHeader">
+            <h1>Mohammad Hadi Soroush</h1>
+            <span><q>I do programming, because i love it</q></span>
+        </div>
+    </header>
+
+    <!-- -------------------------Navigation Part  ------------------>
+    <nav class="navbar" id="navbarid">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects/project.html">Projects</a></li>
+            <li><a href="about/about.html">About</a></li>
+            <li><a href="contact/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- -------------------------main Part  ------------------>
+    <div id="main">
+        <div class="container">
+            <div class="prtcl-row">
+                <div class="col offset-m2 offset-l2">
+                </div>
+                <div class="col s12 m8 l8">
+                    <div class="dragdrop">
+                        <img src="image/dragdrop/flower.png" alt="image1">
+                        <img src="image/dragdrop/books.png" alt="image2">
+                        <img src="image/dragdrop/notebook.png" alt="image3">
+                        <img src="image/dragdrop/laptop2.png" alt="image4">
+                        <img src="image/dragdrop/keyboard.png" alt="image5">
+                        <img src="image/dragdrop/cup.png" alt="image6">
+                        <img src="image/dragdrop/mobile.png" alt="image7">
+                        <img src="image/dragdrop/laptopTouch.png" alt="image8">
+                    </div>
+                </div>
+
+
+                <div class="col offset-m2 offset-l2">
+                </div>
+            </div>
+            <!-- end of partc-row -->
+
+            <!--------------------------- next row  --------------------------->
+            <div class="prtcl-row">
+                <div class="col offset-m3 offset-l3">
+
+                </div>
+                <div class="col s12 m6 l6">
+                    <div>
+                        <img id="firstImg" class="image_circle" src="image/bamiyan/bam1.jpg" width="100%" alt="Image">
+                        <figcaption>Hadi's Photo</figcaption>
+                    </div>
+                </div>
+                <div class="col offset-m3 offset-l3">
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of container -->
+    </div>
+    <!-- end of main -->
+    <!-- -------------------------footer Part  ------------------>
+    <footer>
+       <div>
+           <ul style="display: inline-block;">
+               <li><a><i class="fa fa-facebook-official fa-1x" aria-hidden="true"></i></a></li>
+               <li><a><i class="fa fa-twitter fa-1x" aria-hidden="true"></i></a></li>
+               <li><a><i class="fa fa-google-plus fa-1x" aria-hidden="true"></i></a></li>
+               <li><a><i class="fa fa-linkedin fa-1x" aria-hidden="true"></i></a></li>
+           </ul>
+       </div>
+    </footer>
+
+    <!------------------------ call to javascript file   ---------------------->
+    <script type="text/javascript" src="js/style.js"></script>
+    <script type="text/javascript" src="js/dragdrop.js"></script>
+    <script type="text/javascript" src="js/socialMedia.js"></script>
+
+    <script>
+        setInterval(function() {
+            changeImage()
+        }, 3000);
+
+        var x = 0;
+
+        function changeImage() {
+
+            var imageArr = [];
+            imageArr[0] = 'image/hadi/img1.jpg';
+            imageArr[1] = 'image/hadi/img2.jpg';
+            imageArr[2] = 'image/hadi/img3.jpg';
+            imageArr[3] = 'image/hadi/img4.jpg';
+            imageArr[4] = 'image/hadi/img5.jpg';
+            imageArr[5] = 'image/hadi/img6.jpg';
+
+
+            var firstImage = document.querySelector('#firstImg');
+
+            firstImage.src = imageArr[x];
+            x++;
+            if (x > 5) {
+                x = 0;
+            }
+        }
+
+
+        /*var firstImage=document.querySelector('#firstImg');
+        firstImage.addEventListener('mouseover', function(){
+           firstImage.src="image/hadi_l.jpg"; 
+        });
+       
+        var firstImage=document.querySelector('#firstImg');
+        firstImage.addEventListener('mouseout', function(){
+           firstImage.src="image/collbie.jpg"; 
+        });*/
+
+    </script>
+
+
 </body>
+
 </html>
