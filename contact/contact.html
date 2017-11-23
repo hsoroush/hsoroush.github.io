@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/form.css">
     <link rel="shortcut icon" type="image/x-icon" href="../image/favicon/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -31,11 +32,11 @@
             <div class="prtcl-row">
                 <div class="col offset-m2 offset-l2">
                 </div>
-                
+
                 <div class="col s12 m4 l4">
-                        <!-- to show a map -->
-                        <h3>Our current address is here:</h3>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10805.364441420577!2d8.518416!3d47.385777!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47900a3f03d60779%3A0xa6bdd026bc1329f8!2sGeroldstrasse+33%2C+8005+Z%C3%BCrich!5e0!3m2!1sen!2sch!4v1509652343719" width="100%" height="270" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <!-- to show a map -->
+                    <h3>Our current address is here:</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10805.364441420577!2d8.518416!3d47.385777!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47900a3f03d60779%3A0xa6bdd026bc1329f8!2sGeroldstrasse+33%2C+8005+Z%C3%BCrich!5e0!3m2!1sen!2sch!4v1509652343719" width="100%" height="270" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
                 <div class="col s12 m4 l4">
                     <div class="form_content">
@@ -45,7 +46,7 @@
                             <input type="text" name="last_name" id="last_name" placeholder="Lastname" autocomplete="off">
                             <input type="email" name="email" id="email" placeholder="Email" autocomplete="off">
                             <textarea name="message" id="message" placeholder="Message"></textarea>
-                            <input type="submit" value="Submit" name="submit">
+                            <input type="submit" value="Submit" id="submit" name="submit">
                         </form>
                     </div>
                 </div>
@@ -72,6 +73,32 @@
     </footer>
     <!------------------------ call to javascript file   ---------------------->
     <script type="text/javascript" src="../js/style.js"></script>
+
+
+    <script>
+        $('#submit').click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                method: 'post',
+                url: 'http://002.powercoders.org/matthias-hueni/api/contact.php',
+                dataType: 'json',
+                data: {
+                    'to_email': 'mohammad.soroush@powercoders.org',
+                    'from_email': $('#email').val(),
+                    'from_name': $('#first_name').val()+" "+$('#last_name').val(),
+                    'message': $('#message').val()
+                },
+                success: function(result) {
+                    alert('ok');
+                },
+                error: function(result) {
+                    alert('error');
+                }
+            });
+        });
+
+    </script>
+
 </body>
 
 </html>
